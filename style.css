@@ -124,15 +124,15 @@ button {
 }
 
 /* .caret {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 2px;
-    vertical-align: middle;
-    border-top: 4px dashed;
-    border-top: 4px solid;
-    border-right: 4px solid #000;
-    border-left: 4px solid #000;
+ display: inline-block;
+ width: 0;
+ height: 0;
+ margin-left: 2px;
+ vertical-align: middle;
+ border-top: 4px dashed;
+ border-top: 4px solid\9;
+ border-right: 4px solid #000;
+ border-left: 4px solid #000;
 } */
 
 #dropdown-button[aria-expanded="true"] + .dropdown-list {
