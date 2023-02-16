@@ -28,7 +28,8 @@ body {
  grid-template-rows: auto 1fr auto;
 }
 
-img {
+img,
+picture {
  display: block;
  max-width: 100%;
 }
@@ -267,16 +268,16 @@ button {
 
 #main {
  display: grid;
- grid-template-columns: auto min(calc(100% - 2rem), 64rem) auto;
- grid-template-rows: auto 1fr auto;
  grid-template-areas:
   "hero"
   "ad1"
   "players-table"
   "ad2";
 }
-@media (min-width: 90em) {
+@media (min-width: 60em) {
  #main {
+  grid-template-columns: max-content 1fr max-content;
+
   grid-template-areas:
    "hero hero hero"
    "ad1 players-table ad2";
@@ -324,20 +325,19 @@ button {
 .table-wrapper {
  overflow-x: scroll;
  border-radius: 0.25rem 0.25rem 0 0;
+ width: calc(100% - 2rem);
+ margin-inline: auto;
 }
 
 .players-table {
  width: max(100%, 23.125rem);
  border-collapse: collapse;
- border-spacing: 0;
- overflow: hidden;
  border-bottom: 0.125rem solid var(--blue-color);
 }
 
 .players-table th,
 .players-table td {
  padding: 0.75rem 0.5rem;
- font-size: 1rem;
 }
 /* .players-table th:first-child,
 .players-table td:first-child {
@@ -415,25 +415,26 @@ input#filter-search:focus {
 }
 
 /* google ads */
-.google-ads {
- background-image: url("https://images.unsplash.com/photo-1658422337472-e05166159a7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
- background-size: cover;
+.google-ad {
+ display: flex;
+ justify-content: center;
+ align-items: start;
  margin-top: 2rem;
- border-radius: 0.25rem;
- width: 920px;
- height: 90px;
+ margin-inline: 1rem;
+ /* border-radius: 0.25rem; */
+ /* overflow: hidden; */
 }
-.google-ads:first-of-type {
+.google-ad:first-of-type {
  grid-area: ad1;
 }
-.google-ads:last-of-type {
+.google-ad:last-of-type {
  grid-area: ad2;
 }
-@media (min-width: 90em) {
- .google-ads {
-  width: 160px;
-  height: 600px;
-  justify-self: center;
+@media (min-width: 60em) {
+ .google-ad {
+  margin-top: 11rem;
+ }
+ .google-ad picture {
   position: sticky;
   top: 5rem;
  }
