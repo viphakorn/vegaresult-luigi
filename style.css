@@ -313,8 +313,6 @@ button {
 /* players table */
 .players-table-section {
  grid-area: players-table;
-
- /* --spacing: 0.75rem; */
  padding-top: 2rem;
 }
 .players-table-section h2 {
@@ -339,14 +337,6 @@ button {
 .players-table td {
  padding: 0.75rem 0.5rem;
 }
-/* .players-table th:first-child,
-.players-table td:first-child {
- padding-left: 1rem;
-}
-.players-table th:last-child,
-.players-table td:last-child {
- padding-right: 1rem;
-} */
 
 .players-table th {
  text-align: left;
@@ -357,10 +347,6 @@ button {
  border-bottom: 1px solid var(--gray-color);
 }
 
-/* .players-table th:nth-child(2),
-.players-table td:nth-child(2) {
- text-align: center;
-} */
 .players-table td a {
  color: var(--blue-color);
  font-weight: 500;
@@ -421,8 +407,6 @@ input#filter-search:focus {
  align-items: start;
  margin-top: 2rem;
  margin-inline: 1rem;
- /* border-radius: 0.25rem; */
- /* overflow: hidden; */
 }
 .google-ad:first-of-type {
  grid-area: ad1;
