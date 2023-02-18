@@ -408,9 +408,7 @@ input#filter-search:focus {
 .google-ad:empty {
   margin: 0;
 }
-.google-ad picture {
-  /* display: none; */
-}
+
 
 .google-ad:nth-of-type(1) {
   grid-area: ad1;
