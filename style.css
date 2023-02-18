@@ -59,9 +59,25 @@ button {
 }
 
 .wrapper {
+  --width: 33.75rem;
   --spacing: 2rem;
-  width: min(calc(100% - var(--spacing)), 80rem);
+  width: min(calc(100% - var(--spacing)), var(--width));
   margin-inline: auto;
+}
+@media (min-width: 48rem) {
+  .wrapper {
+    --width: 45em;
+  }
+}
+@media (min-width: 62em) {
+  .wrapper {
+    --width: 60rem;
+  }
+}
+@media (min-width: 75em) {
+  .wrapper {
+    --width: 71.25rem;
+  }
 }
 
 .sr-only {
@@ -133,8 +149,7 @@ button {
   top: 3.5rem;
   left: 0;
   background-color: var(--white-color);
-  width: min(100%, 60rem);
-  overflow: hidden;
+  width: min(100%, 64rem);
   transition: 250ms;
 }
 .nav-list[data-state="opened"] {
@@ -230,7 +245,7 @@ button {
   rotate: 180deg;
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .menu-button {
     display: none;
   }
@@ -269,7 +284,8 @@ button {
 
 #main {
   margin-top: 3.5rem;
-  display: grid;
+  /* display: grid; */
+  grid-template-columns: 1fr;
   grid-template-areas:
     "hero"
     "ad1"
@@ -314,6 +330,8 @@ button {
   font-size: clamp(1rem, 0.85rem + 0.85vw, 1.5rem);
 }
 
+.main-content {
+}
 /* players table */
 .players-table-section {
   grid-area: players-table;
@@ -337,6 +355,7 @@ button {
 
 .players-table th,
 .players-table td {
+  /* margin: 1rem; */
   padding: 0.75rem 0.5rem;
   text-align: left;
   white-space: nowrap;
@@ -398,30 +417,29 @@ input#filter-search:focus {
 }
 
 /* google ads */
-.google-ad {
+.google-ads {
   display: flex;
   justify-content: center;
   align-items: start;
   margin-top: 2rem;
   margin-inline: 1rem;
 }
-.google-ad:empty {
+.google-ads:empty {
   margin: 0;
 }
 
-
-.google-ad:nth-of-type(1) {
+/* .google-ads:nth-of-type(1) {
   grid-area: ad1;
 }
-.google-ad:nth-of-type(2) {
+.google-ads:nth-of-type(2) {
   grid-area: ad2;
-}
+} */
 @media (min-width: 60em) {
-  .google-ad {
+  .google-ads {
     margin-top: 11rem;
     min-width: 10rem;
   }
-  .google-ad picture {
+  .google-ads picture {
     position: sticky;
     top: 5rem;
   }
