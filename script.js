@@ -32,8 +32,8 @@ filterSearch.addEventListener("input", () => {
   const searchTerm = filterSearch.value.trim().toLowerCase()
 
   tableRows.forEach((row) => {
-    const [id, name, fed, title, rtgF, rtgN] = Array.from(row.querySelectorAll("td")).map((cell) => cell.textContent.trim().toLowerCase())
-    const matches = [id, name, fed, title, rtgF, rtgN].some((field) => field.includes(searchTerm))
+    const cases = Array.from(row.querySelectorAll("td")).map((cell) => cell.textContent.trim().toLowerCase())
+    const matches = cases.some((field) => field.includes(searchTerm))
     row.style.display = matches ? "" : "none"
   })
 })
