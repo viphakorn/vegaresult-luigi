@@ -1,7 +1,7 @@
 const menuButton = document.querySelector(".menu-button")
 const navList = document.querySelector("#navigation-list")
 
-menuButton.addEventListener("click", () => {
+menuButton?.addEventListener("click", () => {
   const isOpened = menuButton.getAttribute("aria-expanded") === "true"
   isOpened ? closeMenu() : openMenu()
 })
@@ -20,7 +20,7 @@ function closeMenu() {
 const dropdownButton = document.querySelector("#dropdown-button")
 const dropdownList = document.querySelector(".dropdown-list")
 
-dropdownButton.addEventListener("click", () => {
+dropdownButton?.addEventListener("click", () => {
   const isOpened = dropdownButton.getAttribute("aria-expanded") === "true"
   isOpened ? dropdownButton.setAttribute("aria-expanded", "false") : dropdownButton.setAttribute("aria-expanded", "true")
 })
@@ -28,12 +28,10 @@ dropdownButton.addEventListener("click", () => {
 const filterSearch = document.querySelector("#filter-search")
 const tableRows = document.querySelectorAll("#players-table tbody tr")
 
-filterSearch.addEventListener("input", () => {
+filterSearch?.addEventListener("input", () => {
   const searchTerm = filterSearch.value.trim().toLowerCase()
-
   tableRows.forEach((row) => {
-    const cases = Array.from(row.querySelectorAll("td")).map((cell) => cell.textContent.trim().toLowerCase())
-    const matches = cases.some((field) => field.includes(searchTerm))
-    row.style.display = matches ? "" : "none"
+    const name = row.querySelector("td:nth-child(2)").textContent.trim().toLowerCase()
+    row.style.display = name.includes(searchTerm) ? "" : "none"
   })
 })
